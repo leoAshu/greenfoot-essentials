@@ -32,6 +32,7 @@ public class Crab extends Actor
             World world;
             world = getWorld();
             world.removeObject(worm);
+            Greenfoot.playSound("eating.wav");
         }
     }
 }
