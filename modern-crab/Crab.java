@@ -8,22 +8,30 @@ public class Crab extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.isKeyDown("up"))
-        {
-            move(5);
-        }
-        if(Greenfoot.isKeyDown("down"))
-        {
-            move(-5);
-        }
-
+        move();
+        eat();
+    } 
+    public void move()
+    {
+        move(4);
         if(Greenfoot.isKeyDown("left"))
         {
-            turn(-5);
+            turn(-3);
         }
         if(Greenfoot.isKeyDown("right"))
         {
-            turn(5);
+            turn(3);
         }
-    }    
+    }
+    public void eat()
+    {
+        Actor worm;
+        worm = getOneObjectAtOffset(0, 0, Worm.class);
+        if(worm != null)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(worm);
+        }
+    }
 }
